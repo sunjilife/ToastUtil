@@ -10,7 +10,7 @@ toast定义ui灵活，不用再修改代码，直接传入布局文件id即可
 how to use:
 
 
-
+```
 public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button://子线程
@@ -56,3 +56,4 @@ public void onClick(View v) {
                 break;
         }
     }
+```
