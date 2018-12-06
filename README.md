@@ -9,34 +9,39 @@ toast定义ui灵活，不用再修改代码，直接传入布局文件id即可
 
 how to use:
 
+
+
 public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button://子线程
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-
-                        ToastUtil.Config.getInstance(SecondActivity.this).setGravity(Gravity.CENTER).setLayoutId(R.layout.toast_layout).
+                        ToastUtil.Config.getInstance(SecondActivity.this).setGravity(Gravity.CENTER).
+                        setLayoutId(R.layout.toast_layout).
                                 setTextViewId(R.id.toast_tView).setMessage("我是子线程里面show出来哒").apply();
                     }
                 }).start();
-
                 break;
             case R.id.button1://系统
                 ToastUtil.showToast(this, "我说我是系统的toast，哒哒哒");
                 break;
             case R.id.button2://普通toast
-                ToastUtil.Config.getInstance(SecondActivity.this).setGravity(Gravity.BOTTOM).setLayoutId(R.layout.toast_layout).setTextColor(R.color.colorPrimaryDark).
-                        setTextViewId(R.id.toast_tView).setMessage("我就是个普通人~~~").apply();
+                ToastUtil.Config.getInstance(SecondActivity.this).setGravity(Gravity.BOTTOM).
+                setLayoutId(R.layout.toast_layout).setTextColor(R.color.colorPrimaryDark).
+                setTextViewId(R.id.toast_tView).setMessage("我就是个普通人~~~").apply();
                 break;
             case R.id.button3://有图标的toast
-                ToastUtil.Config.getInstance(SecondActivity.this).setGravity(Gravity.CENTER).setLayoutId(R.layout.toast_layout).
-                        setTextViewId(R.id.toast_tView).setMessage("我是有图标的").setImageViewId(R.id.iv_icon).setImageRes(android.R.drawable.ic_menu_compass).apply();
+                ToastUtil.Config.getInstance(SecondActivity.this).setGravity(Gravity.CENTER).
+                setLayoutId(R.layout.toast_layout).
+                        setTextViewId(R.id.toast_tView).setMessage("我是有图的").setImageViewId(R.id.iv_icon).
+                        setImageRes(android.R.drawable.ic_menu_compass).apply();
                 break;
             case R.id.button4://toast再点击，不晓得有什么鬼用
-
-                ToastUtil.Config.getInstance(SecondActivity.this).setGravity(Gravity.CENTER).setLayoutId(R.layout.toast_layout).
-                        setTextViewId(R.id.toast_tView).setMessage("我弹出来后还可以点一哈").setListener(new View.OnClickListener() {
+                ToastUtil.Config.getInstance(SecondActivity.this).setGravity(Gravity.CENTER).
+                setLayoutId(R.layout.toast_layout).
+                        setTextViewId(R.id.toast_tView).setMessage("我弹出来后还可以点一哈").
+                        setListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         ToastUtil.showToast(SecondActivity.this, "哪个在点我？给我出来");
@@ -45,7 +50,8 @@ public void onClick(View v) {
 
                 break;
             case R.id.button5:
-                ToastUtil.Config.getInstance(SecondActivity.this).setGravity(Gravity.BOTTOM).setyDimen(50).setLayoutId(R.layout.toast_layout).setTextColor(R.color.colorPrimaryDark).
+                ToastUtil.Config.getInstance(SecondActivity.this).setGravity(Gravity.BOTTOM).
+                setyDimen(50).setLayoutId(R.layout.toast_layout).setTextColor(R.color.colorPrimaryDark).
                         setTextViewId(R.id.toast_tView).setMessage("我就是个普通人~~~").apply();
                 break;
         }
