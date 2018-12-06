@@ -57,3 +57,4 @@ public void onClick(View v) {
         }
     }
 ```
+![Image text](https://github.com/sunjilife/ToastUtil/blob/master/%E4%B8%8B%E8%BD%BD.gif)
